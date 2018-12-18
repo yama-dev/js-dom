@@ -99,6 +99,17 @@ export class JS_DOM {
     }
   }
 
+  removeEvent(elem, event, func){
+    if(elem === window){
+      window.removeEventListener(event, func);
+    } else {
+      let _dom = this.selectDom(elem);
+      _dom.map((item,index)=>{
+        item.removeEventListener(event, func);
+      });
+    }
+  }
+
   setStyle(elem, obj){
     let _dom = this.selectDom(elem);
     _dom.map((item,index)=>{

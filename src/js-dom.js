@@ -7,7 +7,7 @@
  * Licensed under the MIT license.
  */
 
-export class JS_DOM {
+export default class JS_DOM {
 
   isDom(obj){
     try {

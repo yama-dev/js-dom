@@ -8,6 +8,8 @@ const config = {
   output: {
     path: `${__dirname}/dist`,
     filename: 'js-dom.js',
+    library: 'JS_DOM',
+    libraryExport: 'default',
     libraryTarget: 'umd'
   },
   module: {

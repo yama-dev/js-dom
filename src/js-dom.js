@@ -1,7 +1,7 @@
 /*!
  * JS DOM (JavaScript Library)
  *   js-dom.js
- * Version 0.0.1
+ * Version 0.0.2
  * Repository https://github.com/yama-dev/js-dom
  * Copyright yama-dev
  * Licensed under the MIT license.
@@ -100,11 +100,14 @@ export class JS_DOM {
   }
 
   setStyle(elem, obj){
-    let _style = '';
-    Object.keys(obj).forEach((key) => {
-      _style += key.replace(/([A-Z])/g, '-$1').toLowerCase() + ':' + obj[key] + ';';
+    let _dom = this.selectDom(elem);
+    _dom.map((item,index)=>{
+      let _style = '';
+      Object.keys(obj).forEach((key) => {
+        _style += key.replace(/([A-Z])/g, '-$1').toLowerCase() + ':' + obj[key] + ';';
+      });
+      item.setAttribute('style', _style);
     });
-    elem.setAttribute('style', _style);
   }
 
 }

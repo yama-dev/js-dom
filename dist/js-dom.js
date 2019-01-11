@@ -2,7 +2,7 @@
 /*!
  * JS DOM (JavaScript Library)
  *   js-dom.js
- * Version 0.0.3
+ * Version 0.0.4
  * Repository https://github.com/yama-dev/js-dom
  * Copyright yama-dev
  * Licensed under the MIT license.

@@ -1,7 +1,7 @@
 /*!
  * JS DOM (JavaScript Library)
  *   js-dom.js
- * Version 0.0.3
+ * Version 0.0.4
  * Repository https://github.com/yama-dev/js-dom
  * Copyright yama-dev
  * Licensed under the MIT license.
@@ -14,7 +14,7 @@ export default class JS_DOM {
       return obj instanceof HTMLElement;
     }
     catch(e){
-      return false
+      return false;
     }
   }
 
@@ -23,7 +23,7 @@ export default class JS_DOM {
       return typeof str == 'string';
     }
     catch(e){
-      return false
+      return false;
     }
   }
 
@@ -55,35 +55,35 @@ export default class JS_DOM {
 
   addClass(elem, className){
     let _dom = this.selectDom(elem);
-    _dom.map((item,index)=>{
+    _dom.map((item)=>{
       item.classList.add(className);
     });
   }
 
   removeClass(elem, className){
     let _dom = this.selectDom(elem);
-    _dom.map((item,index)=>{
+    _dom.map((item)=>{
       item.classList.remove(className);
     });
   }
 
   toggleClass(elem, className){
     let _dom = this.selectDom(elem);
-    _dom.map((item,index)=>{
+    _dom.map((item)=>{
       item.classList.toggle(className);
     });
   }
 
   setHtml(elem, html){
     let _dom = this.selectDom(elem);
-    _dom.map((item,index)=>{
+    _dom.map((item)=>{
       item.innerHTML = html;
     });
   }
 
   appendHtml(elem, html){
     let _dom = this.selectDom(elem);
-    _dom.map((item,index)=>{
+    _dom.map((item)=>{
       item.innerHTML += html;
     });
   }
@@ -93,7 +93,7 @@ export default class JS_DOM {
       window.addEventListener(event, func);
     } else {
       let _dom = this.selectDom(elem);
-      _dom.map((item,index)=>{
+      _dom.map((item)=>{
         item.addEventListener(event, func);
       });
     }
@@ -104,7 +104,7 @@ export default class JS_DOM {
       window.removeEventListener(event, func);
     } else {
       let _dom = this.selectDom(elem);
-      _dom.map((item,index)=>{
+      _dom.map((item)=>{
         item.removeEventListener(event, func);
       });
     }
@@ -112,7 +112,7 @@ export default class JS_DOM {
 
   setStyle(elem, obj){
     let _dom = this.selectDom(elem);
-    _dom.map((item,index)=>{
+    _dom.map((item)=>{
       let _style = '';
       Object.keys(obj).forEach((key) => {
         _style += key.replace(/([A-Z])/g, '-$1').toLowerCase() + ':' + obj[key] + ';';

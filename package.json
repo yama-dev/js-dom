@@ -1,6 +1,6 @@
 {
   "name": "@yama-dev/js-dom",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "make dom easy to use.",
   "keywords": [
     "DOM",

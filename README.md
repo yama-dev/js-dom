@@ -12,8 +12,6 @@ ___
 
 ## Contribution
 
-let dom = new JS_DOM();
-
 1. Fork it ( https://github.com/yama-dev/js-dom/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')

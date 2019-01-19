@@ -1,6 +1,6 @@
 {
   "name": "@yama-dev/js-dom",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "make dom easy to use.",
   "keywords": [
     "DOM",
@@ -17,7 +17,8 @@
     "build:develop": "webpack --mode=development --progress --colors --watch",
     "production": "npm-run-all -p build:production server:production",
     "server:production": "browser-sync start --server ./ --directory ./sample --files **/*.css **/*.js **/*.html",
-    "build:production": "webpack --mode=production --progress --colors --watch"
+    "build:production": "webpack --mode=production --progress --colors --watch",
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,12 @@
     "browser-sync": "^2.23.6",
     "eslint": "^5.12.0",
     "eslint-loader": "^2.1.1",
+    "karma": "^3.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-mocha": "^1.3.0",
+    "karma-webpack": "^3.0.5",
+    "mocha": "^5.2.0",
     "npm-run-all": "^4.1.2",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"

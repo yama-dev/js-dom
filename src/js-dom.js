@@ -28,6 +28,7 @@ export default class JS_DOM {
   }
 
   selectDom(elem){
+    if(!elem) return false;
     let _dom;
     if(( Array.isArray(elem) || elem.length ) && !this.isStr(elem)){
       if(this.isDom(elem[0])){
@@ -42,6 +43,7 @@ export default class JS_DOM {
         _dom = Array.prototype.slice.call( document.querySelectorAll(elem) );
       }
     }
+    if(_dom.length === 0) _dom = null; 
     return _dom;
   }
 
@@ -55,6 +57,7 @@ export default class JS_DOM {
 
   addClass(elem, className){
     let _dom = this.selectDom(elem);
+    if(!_dom) return false;
     _dom.map((item)=>{
       item.classList.add(className);
     });
@@ -62,6 +65,7 @@ export default class JS_DOM {
 
   removeClass(elem, className){
     let _dom = this.selectDom(elem);
+    if(!_dom) return false;
     _dom.map((item)=>{
       item.classList.remove(className);
     });
@@ -69,6 +73,7 @@ export default class JS_DOM {
 
   toggleClass(elem, className){
     let _dom = this.selectDom(elem);
+    if(!_dom) return false;
     _dom.map((item)=>{
       item.classList.toggle(className);
     });
@@ -76,6 +81,7 @@ export default class JS_DOM {
 
   setHtml(elem, html){
     let _dom = this.selectDom(elem);
+    if(!_dom) return false;
     _dom.map((item)=>{
       item.innerHTML = html;
     });
@@ -83,6 +89,7 @@ export default class JS_DOM {
 
   appendHtml(elem, html){
     let _dom = this.selectDom(elem);
+    if(!_dom) return false;
     _dom.map((item)=>{
       item.innerHTML += html;
     });
@@ -93,6 +100,7 @@ export default class JS_DOM {
       window.addEventListener(event, func);
     } else {
       let _dom = this.selectDom(elem);
+      if(!_dom) return false;
       _dom.map((item)=>{
         item.addEventListener(event, func);
       });
@@ -104,6 +112,7 @@ export default class JS_DOM {
       window.removeEventListener(event, func);
     } else {
       let _dom = this.selectDom(elem);
+      if(!_dom) return false;
       _dom.map((item)=>{
         item.removeEventListener(event, func);
       });
@@ -112,6 +121,7 @@ export default class JS_DOM {
 
   setStyle(elem, obj){
     let _dom = this.selectDom(elem);
+    if(!_dom) return false;
     _dom.map((item)=>{
       let _style = '';
       Object.keys(obj).forEach((key) => {

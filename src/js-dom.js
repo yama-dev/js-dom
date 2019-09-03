@@ -1,13 +1,5 @@
-/*!
- * JS DOM (JavaScript Library)
- *   js-dom.js
- * Version 0.0.6
- * Repository https://github.com/yama-dev/js-dom
- * Copyright yama-dev
- * Licensed under the MIT license.
- */
 
-export default class JS_DOM {
+export class JS_DOM {
 
   isDom(obj){
     try {
@@ -128,6 +120,18 @@ export default class JS_DOM {
         _style += key.replace(/([A-Z])/g, '-$1').toLowerCase() + ':' + obj[key] + ';';
       });
       item.setAttribute('style', _style);
+    });
+  }
+
+  setAttribute(elem, obj){
+    let _dom = this.selectDom(elem);
+    if(!_dom) return false;
+    _dom.map((item)=>{
+      let _property = '';
+      Object.keys(obj).forEach((key) => {
+        _property = key.replace(/([A-Z])/g, '-$1').toLowerCase();
+        item.setAttribute(_property, obj[key]);
+      });
     });
   }
 

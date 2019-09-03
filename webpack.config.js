@@ -28,7 +28,7 @@ const babelPlugin = [
 const config = {
   mode: env || 'development',
   entry: {
-    'js-dom': './src/js-dom.js'
+    'js-dom': './index.js'
   },
   output: {
     path: `${__dirname}/dist`,

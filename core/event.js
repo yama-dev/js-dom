@@ -3,12 +3,12 @@ import * as core from './';
 
 function addEvent(elem, event, func){
   if(elem === window){
-    window.addEventListener(event, func);
+    window.addEventListener(event, func, { passive: false });
   } else {
     let _dom = core.selectDom(elem);
     if(!_dom) return false;
     _dom.map((item)=>{
-      item.addEventListener(event, func);
+      item.addEventListener(event, func, { passive: false });
     });
   }
 }

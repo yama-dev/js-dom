@@ -1,7 +1,7 @@
 
 import * as core from './core/';
 
-export class JS_DOM {
+export default class JS_DOM {
 
   static isDom(obj){
     return core.isDom(obj);

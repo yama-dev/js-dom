@@ -40,7 +40,7 @@
 
   <h3>Basic Use</h3>
   <pre class="prettyprint lang-html mt-2">
-    <code> 
+    <code>
       &lt;script&gt;
         const dom = new JS_DOM();
         console.log(dom.selectDom(&#039;div&#039;));
@@ -50,21 +50,50 @@
   <hr class="mt-4 mb-4">
 
   <div class="row">
+
+    <div class="col-sm mb-4">
+      <h2>h2</h2>
+    </div>
+
+    <div class="col-sm mb-4">
+      <span>span</span>
+    </div>
+
     <div class="col-sm col-lg-6 mb-4">
 
       <script>
         const dom = new JS_DOM();
         console.log(dom);
+
+        console.log('----------');
+
         console.log(dom.selectDom('div'));
+        console.log(dom.selectDom('.container', document.querySelector('script')));
+        console.log(dom.selectDom('div.col-sm', document.querySelector('script')));
+
+        console.log('----------');
+
+        console.log(dom.selectDom(dom.selectDom('.container'), 'div'));
+        console.log(dom.selectDom(dom.selectDom('.container'), document.querySelector('script')));
+        console.log(dom.selectDom(dom.selectDom('div.col-sm'), document.querySelector('script')));
+        console.log(dom.selectDom(dom.selectDom('div.col-sm'), document.querySelector('span')));
+
+        console.log('----------');
+
+        console.log(dom.selectDom('div.col-sm', 'div div div script')); // TODO
+        console.log(dom.selectDom(dom.selectDom('div.col-sm span'),document.querySelector('script')));
       </script>
 
     </div>
 
     <div class="col-sm mb-4">
+      <h3>h3</h3>
     </div>
 
     <div class="col-sm mb-4">
+      <p>p</p>
     </div>
+
 
   </div>
 

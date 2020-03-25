@@ -11,12 +11,12 @@ export default class JS_DOM {
     return core.isStr(str);
   }
 
-  static selectDom(elem){
-    return core.selectDom(elem);
+  static selectDom(elem, childNode){
+    return core.selectDom(elem, childNode);
   }
 
-  selectDom(elem){
-    return core.selectDom(elem);
+  selectDom(elem, childNode){
+    return core.selectDom(elem, childNode);
   }
 
   hasClass(elem, className){

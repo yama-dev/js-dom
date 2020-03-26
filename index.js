@@ -19,6 +19,10 @@ export default class JS_DOM {
     return core.selectDom(elem, childNode);
   }
 
+  indexDom(elem){
+    return core.indexDom(elem);
+  }
+
   hasClass(elem, className){
     return core.hasClass(elem, className);
   }

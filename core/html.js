@@ -23,7 +23,7 @@ function setStyle(elem, obj){
   _dom.map((item)=>{
     let _style = '';
     Object.keys(obj).forEach((key) => {
-      _style += key.replace(/([A-Z])/g, '-$1').toLowerCase() + ':' + obj[key] + ';';
+      if(obj[key] !== null) _style += key.replace(/([A-Z])/g, '-$1').toLowerCase() + ': ' + obj[key] + ';';
     });
     item.setAttribute('style', _style);
   });

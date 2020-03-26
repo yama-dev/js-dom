@@ -38,3 +38,13 @@ export function selectDom(elem,childNode){
   return _dom;
 }
 
+export function indexDom(elem){
+  let children = elem.parentNode.childNodes;
+  let num = 0;
+  for (let i = 0; i < children.length; i++) {
+    if (children[i] == elem) return num;
+    if (children[i].nodeType == 1) num++;
+  }
+  return -1;
+}
+

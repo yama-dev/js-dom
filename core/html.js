@@ -9,6 +9,14 @@ function setHtml(elem, html){
   });
 }
 
+function prependHtml(elem, html){
+  let _dom = core.selectDom(elem);
+  if(!_dom) return false;
+  _dom.map((item)=>{
+    item.insertAdjacentHTML('afterbegin', html);
+  });
+}
+
 function appendHtml(elem, html){
   let _dom = core.selectDom(elem);
   if(!_dom) return false;
@@ -43,6 +51,7 @@ function setAttribute(elem, obj){
 
 export {
   setHtml,
+  prependHtml,
   appendHtml,
   setStyle,
   setAttribute

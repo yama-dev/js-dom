@@ -13,7 +13,7 @@ function appendHtml(elem, html){
   let _dom = core.selectDom(elem);
   if(!_dom) return false;
   _dom.map((item)=>{
-    item.innerHTML += html;
+    item.insertAdjacentHTML('beforeend', html);
   });
 }
 

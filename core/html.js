@@ -25,6 +25,14 @@ function appendHtml(elem, html){
   });
 }
 
+function removeHtml(elem){
+  let _dom = core.selectDom(elem);
+  if(!_dom) return false;
+  _dom.map((item)=>{
+    item.parentNode.removeChild(item);
+  });
+}
+
 function setStyle(elem, obj){
   let _dom = core.selectDom(elem);
   if(!_dom) return false;
@@ -53,6 +61,7 @@ export {
   setHtml,
   prependHtml,
   appendHtml,
+  removeHtml,
   setStyle,
-  setAttribute
+  setAttribute,
 };

@@ -51,8 +51,16 @@ export default class JS_DOM {
     return core.setHtml(elem, html);
   }
 
+  prependHtml(elem, html){
+    return core.prependHtml(elem, html);
+  }
+
   appendHtml(elem, html){
     return core.appendHtml(elem, html);
+  }
+
+  removeHtml(elem){
+    return core.removeHtml(elem);
   }
 
   setStyle(elem, obj){

@@ -9,11 +9,27 @@ function setHtml(elem, html){
   });
 }
 
+function prependHtml(elem, html){
+  let _dom = core.selectDom(elem);
+  if(!_dom) return false;
+  _dom.map((item)=>{
+    item.insertAdjacentHTML('afterbegin', html);
+  });
+}
+
 function appendHtml(elem, html){
   let _dom = core.selectDom(elem);
   if(!_dom) return false;
   _dom.map((item)=>{
-    item.innerHTML += html;
+    item.insertAdjacentHTML('beforeend', html);
+  });
+}
+
+function removeHtml(elem){
+  let _dom = core.selectDom(elem);
+  if(!_dom) return false;
+  _dom.map((item)=>{
+    item.parentNode.removeChild(item);
   });
 }
 
@@ -43,7 +59,9 @@ function setAttribute(elem, obj){
 
 export {
   setHtml,
+  prependHtml,
   appendHtml,
+  removeHtml,
   setStyle,
-  setAttribute
+  setAttribute,
 };
